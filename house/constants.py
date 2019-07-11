@@ -14,3 +14,4 @@ post_events_link = base_url_backoffice + "events"
 get_refbooks_link = base_url_backoffice + "refbooks"
 login_link = "http://staging.treedom.co/"
 post_auth = base_url + "auth/login"
+#pos

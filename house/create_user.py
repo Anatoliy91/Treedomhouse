@@ -1,6 +1,7 @@
 import boto3
 
 from house.utils import *
+from house.api_client import *
 
 Username = get_random_email()
 Password = get_random_password()
@@ -64,4 +65,20 @@ print(token)
 #     response = client.initiate_auth(ClientId='30vvmsivo3l54mm4780ecgvvqg', AuthFlow='USER_PASSWORD_AUTH',AuthParameters={  'USERNAME': Username,   'PASSWORD': Password,)
 #     t = response["AuthenticationResult"],
 #     token = t["AccessToken"],
+
 #     print(token)
+
+
+def test_get_institution():
+    resp = get_institution()
+    print(resp.text)
+    print(resp.status_code)
+    text_data = default_json_to_dict(resp.text)
+    print(text_data)
+    t = text_data["data"]
+    print(t)
+#    t2 = t["id"]
+ #   print(t2)
+    assert resp.status_code == 200
+
+    test_get_institution()
